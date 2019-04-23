@@ -32,9 +32,9 @@ declare namespace WebAssembly {
     class Instance {
 		constructor (module: Module, importObject: object);
 
-		// TODO: mdn says "an object containing as its members all the functions exported from the WebAssembly module instance"
-		// so we could provide it with the assurance that it is a function, right?
-		public readonly exports: object;
+		public readonly exports: {
+			[index: string]: any;
+		};
 	}
 
 	interface GlobalDescriptor {
